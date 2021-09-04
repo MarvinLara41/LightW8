@@ -40,14 +40,8 @@ if (process.env.NODE_ENV === "production") {
 /** Database Connection */
 const mongodbURI = config.MONGODB_URI;
 
-mongoose
-  .connect(mongodbURI, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((error) => console.log(error.reason));
+mongoose.connect(mongodbURI);
+console.log(mongoose.connection.readyState);
 
 //** Validating connecting to server */
 app.listen(PORT, () => {
