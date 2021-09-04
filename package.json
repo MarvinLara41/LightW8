@@ -1,0 +1,44 @@
+{
+  "name": "lightw8",
+  "version": "1.0.0",
+  "proxy": "http://127.0.0.1:5004",
+  "type": "module",
+  "description": "The simple application that allows user to keep track of their workout routines.",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarvinLara41/LightW8.git"
+  },
+  "author": "Marvin Lara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarvinLara41/LightW8/issues"
+  },
+  "homepage": "https://github.com/MarvinLara41/LightW8#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^6.2.1",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.25.1",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.4",
+    "nodemon": "^2.0.12"
+  },
+  "engines": {
+    "node": "14.7.0",
+    "npm": "6.14.7"
+  }
+}
