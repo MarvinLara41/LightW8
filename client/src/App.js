@@ -56,12 +56,14 @@ function App() {
             <Link to="/signin">Sign In</Link>
           )}
         </header>
-
-        <Switch>
-          <Route path="/signin" component={SigninScreen}></Route>
-          <Route path="/register" component={RegisterScreen}></Route>
-          <Route path="/" component={LandingScreen} exact></Route>
-        </Switch>
+        <main>
+          <Switch>
+            <Route path="/signin" component={SigninScreen}></Route>
+            <Route path="/register" component={RegisterScreen}></Route>
+            <Route path="/" component={LandingScreen} exact></Route>
+          </Switch>
+        </main>
+        <footer className="row center">All rights reserverd.</footer>
       </div>
     </BrowserRouter>
   );

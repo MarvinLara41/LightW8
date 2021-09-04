@@ -15,3 +15,87 @@ body {
 #root {
   height: 100%;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 4rem 1fr 5rem;
+  height: 100%;
+  font-family: "Rock Salt", cursive;
+  color: #0a1128;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #0a1128;
+}
+
+a:hover {
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
+  border-style: solid;
+  border-radius: 2rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row.center {
+  justify-content: center;
+}
+
+/**dropdown **/
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 14rem;
+  padding: 1rem;
+  z-index: 1;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Landing Screen*/
+.landing {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.landing-actions > ul > li {
+  margin: 2rem;
+}
