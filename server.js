@@ -10,6 +10,7 @@ import config from "./config.js";
 import path from "path";
 
 import userRouter from "./routes/userRouter.js";
+import workoutRouter from "./routes/workoutRouter.js";
 
 const app = express();
 
@@ -21,6 +22,7 @@ const __dirname = path.resolve();
 
 /** API */
 app.use("/api/users", userRouter);
+app.use("/api/workout", workoutRouter);
 
 //** Error handler */
 app.use((err, req, res, next) => {

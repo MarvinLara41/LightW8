@@ -9,6 +9,7 @@ import { signout } from "./actions/userActions";
 import RegisterScreen from "./screens/RegisterScreen";
 import SigninScreen from "./screens/SigninScreen";
 import LandingScreen from "./screens/LandingScreen";
+import EditProfileScreen from "./screens/EditProfileScreen";
 
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
@@ -40,7 +41,7 @@ function App() {
 
               <ul className="dropdown-content">
                 <li>
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/editprofile">Edit Profile</Link>
                 </li>
                 <li>
                   <Link to="/workouthistory">Work-OutHistory</Link>
@@ -60,6 +61,8 @@ function App() {
           <Switch>
             <Route path="/signin" component={SigninScreen}></Route>
             <Route path="/register" component={RegisterScreen}></Route>
+            <Route path="/editprofile" component={EditProfileScreen}></Route>
+
             <Route path="/" component={LandingScreen} exact></Route>
           </Switch>
         </main>

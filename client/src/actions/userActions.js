@@ -37,10 +37,6 @@ export const signin = (email, password) => async (dispatch) => {
 export const signout = () => (dispatch) => {
   localStorage.removeItem("userInfo");
 
-  localStorage.removeItem("cartItems");
-
-  localStorage.removeItem("shippingAddress");
-
   dispatch({ type: USER_SIGNOUT });
 };
 
@@ -100,7 +96,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   } = getState();
 
   try {
-    const { data } = await axios.put(`/api/users/profile`, user, {
+    const { data } = await axios.put(`/api/users/editprofile`, user, {
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
     dispatch({ type: USER_UPDATE_PROFILE_SUCCESS, payload: data });

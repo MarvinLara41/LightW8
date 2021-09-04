@@ -55,7 +55,7 @@ userRouter.post(
 );
 
 userRouter.put(
-  "/profile",
+  "/editprofile",
   isAuth,
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
