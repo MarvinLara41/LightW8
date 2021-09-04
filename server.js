@@ -41,7 +41,10 @@ if (process.env.NODE_ENV === "production") {
 const mongodbURI = config.MONGODB_URI;
 
 mongoose.connect(mongodbURI);
-console.log(mongoose.connection.readyState);
+
+mongoose.connection.on("connected", () => {
+  console.log(`Connected to MongoDB ${mongoose.connection.readyState}`);
+});
 
 //** Validating connecting to server */
 app.listen(PORT, () => {
