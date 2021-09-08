@@ -9,11 +9,7 @@ import {
   userDetailsReducer,
 } from "./reducers/userReducer.js";
 
-import {
-  workoutSaveReducer,
-  workoutPersonalListReducer,
-  workoutDeleteReducer,
-} from "./reducers/workoutReducer";
+import { workoutPersonalListReducer } from "./reducers/workoutReducer";
 
 const initialState = {
   userSignin: {
@@ -23,20 +19,18 @@ const initialState = {
   },
 };
 
-const reducers = combineReducers({
+const reducer = combineReducers({
   userSignin: userSigninReducer,
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
   userUpdateProfile: userUpdateProfileReducer,
-  workoutSave: workoutSaveReducer,
   workoutPersonalList: workoutPersonalListReducer,
-  workoutDelete: workoutDeleteReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  reducers,
+  reducer,
   initialState,
   composeEnhancer(applyMiddleware(thunk))
 );

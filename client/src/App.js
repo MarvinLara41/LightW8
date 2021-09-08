@@ -10,6 +10,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import SigninScreen from "./screens/SigninScreen";
 import LandingScreen from "./screens/LandingScreen";
 import EditProfileScreen from "./screens/EditProfileScreen";
+import DashBoardScreen from "./screens/DashBoardScreen";
 
 function App() {
   const userSignin = useSelector((state) => state.userSignin);
@@ -28,7 +29,7 @@ function App() {
       <div className="grid-container">
         <header className="row">
           <div>
-            <Link className="brand" to="/">
+            <Link className="brand" to="/mine">
               LightW8
             </Link>
           </div>
@@ -40,6 +41,9 @@ function App() {
               </Link>
 
               <ul className="dropdown-content">
+                <li>
+                  <Link to="/addworkout">Add a Workout</Link>
+                </li>
                 <li>
                   <Link to="/editprofile">Edit Profile</Link>
                 </li>
@@ -62,7 +66,7 @@ function App() {
             <Route path="/signin" component={SigninScreen}></Route>
             <Route path="/register" component={RegisterScreen}></Route>
             <Route path="/editprofile" component={EditProfileScreen}></Route>
-
+            <Route path="/mine" component={DashBoardScreen}></Route>
             <Route path="/" component={LandingScreen} exact></Route>
           </Switch>
         </main>

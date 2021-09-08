@@ -14,7 +14,7 @@ export default function SigninScreen(props) {
   /**directs user on where to go based on if user is signed in or not */
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
-    : "/";
+    : "/dashboard";
 
   const userSignin = useSelector((state) => state.userSignin);
 
